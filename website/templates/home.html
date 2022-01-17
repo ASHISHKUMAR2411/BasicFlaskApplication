@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+
+{% block styles %}
+body {
+    background: url("https://media.istockphoto.com/vectors/abstract-blurred-colorful-background-vector-id1248542684?k=20&m=1248542684&s=612x612&w=0&h=1yKiRrtPhiqUJXS_yJDwMGVHVkYRk2pJX4PG3TT4ZYM=") ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.row{
+    margin-top : 5%;
+}
+
+.row .col-md-4{
+    padding : 1%;
+    background-color: transparent;
+}
+
+.card img{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+{% endblock %}
+
+{% block body %}
+<section class="home-page" id="home-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem; background-color: transparent; font-weight: bold;">
+                    <img src="https://source.unsplash.com/random/300*100?nature" width="286px" height="191px" class="card-img-top" alt="...">
+                    <div class="card-body" style="border: 1px solid black;">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's
+                            content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem; background-color: transparent; font-weight: bold;">
+                    <img src="https://source.unsplash.com/random/300*100?night" width="286px" height="191px"  class="card-img-top" alt="...">
+                    <div class="card-body" style="border: 1px solid black;">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's
+                            content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem; background-color: transparent; font-weight: bold;">
+                    <img src="https://source.unsplash.com/random/300*100?car" width="286px" height="191px"  class="card-img-top" alt="...">
+                    <div class="card-body" style="border: 1px solid black;">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's
+                            content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}
