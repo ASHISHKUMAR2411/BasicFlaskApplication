@@ -6,6 +6,6 @@ from website import create_app
 
 app = create_app()
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
     # here debug=True means whenever we change the app files or any changes in the project it will re-render or re-run the whole file checking for error and if everything is good it will execute it
 
