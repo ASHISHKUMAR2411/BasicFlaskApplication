@@ -1,6 +1,7 @@
 # as this file make the website a package, and now we can write function and class to import them
 from flask import Flask
 import os
+from os import path
 from dotenv import load_dotenv, find_dotenv
 from flask_sqlalchemy import SQLAlchemy
 load_dotenv(find_dotenv())
@@ -25,6 +26,14 @@ def create_app():
     # now register the Blueprints for app to regonise
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
-
+    
+    from .models import User, Note
+    create_database(app)
     # return app with taking __name__ from where it was called
     return app
+
+
+def create_database(app):
+    if not path.exists('website/'+DB_NAME):
+        db.create_all(app=app)
+        print("Database created")
