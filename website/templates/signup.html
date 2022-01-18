@@ -299,33 +299,39 @@ display: block;
     <div class="section">
         <div class="container">
             <div class="row full-height justify-content-center">
-                    <div class="section pb-5 pt-5 pt-sm-2 text-center">
-                        <div class="card-3d-wrap mx-auto">
-                            <div class="card-3d-wrapper">
-                                <div class="card-front">
-                                    <div class="center-wrap">
-                                        <div class="section text-center">
+                <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                    <div class="card-3d-wrap mx-auto">
+                        <div class="card-3d-wrapper">
+                            <div class="card-front">
+                                <div class="center-wrap">
+                                    <div class="section text-center">
+                                        <form method="POST">
                                             <h4 class="mb-4 pb-3">Sign Up</h4>
                                             <div class="form-group mt-2">
                                                 <input type="text" name="logname" class="form-style"
-                                                       placeholder="Your Full Name" id="logname" autocomplete="off">
+                                                       placeholder="Your Full Name" id="logname" autocomplete="off" required>
                                             </div>
                                             <div class="form-group mt-2">
                                                 <input type="email" name="logemail" class="form-style"
-                                                       placeholder="Your Email" id="logemail" autocomplete="off">
+                                                       placeholder="Your Email" id="logemail" autocomplete="off" required>
                                             </div>
                                             <div class="form-group mt-2">
                                                 <input type="password" name="logpass" class="form-style"
-                                                       placeholder="Your Password" id="logpass" autocomplete="off">
+                                                       placeholder="Your Password" id="logpass" autocomplete="off" required>
                                             </div>
-                                            <a href="#" class="btn mt-4">submit</a>
-                                        </div>
+                                            <div class="form-group mt-2">
+                                                <input type="password" name="logpassconfirm" class="form-style"
+                                                       placeholder="Confirm Password" id="logpassconfirm" autocomplete="off" required>
+                                            </div>
+                                            <button type="submit" class="btn mt-4">submit</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
     </div>
 </section>
