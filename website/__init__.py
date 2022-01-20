@@ -6,6 +6,8 @@ from dotenv import load_dotenv, find_dotenv
 from flask_sqlalchemy import SQLAlchemy
 load_dotenv(find_dotenv())
 # to load our credential we have use dotenv package for our website
+from flask_login import LoginManager
+
 
 db = SQLAlchemy()
 DB_NAME = os.getenv('DB_NAME')
@@ -30,6 +32,15 @@ def create_app():
     from .models import User, Note
     create_database(app)
     # return app with taking __name__ from where it was called
+    
+    login_manager = LoginManager()
+    login_manager.login_view = 'views.home'
+    login_manager.init_app(app)
+    
+    @login_manager.user_loader
+    def load_user(user_id):
+        return User.query.get(int(user_id))
+    
     return app
 
 

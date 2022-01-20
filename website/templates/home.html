@@ -1,11 +1,16 @@
 {% extends "base.html" %}
 {% block title %} Home {% endblock %}
 
-{% block styles %}
+{% block styles %}@import
+url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 body {
     background: url("https://media.istockphoto.com/vectors/abstract-blurred-colorful-background-vector-id1248542684?k=20&m=1248542684&s=612x612&w=0&h=1yKiRrtPhiqUJXS_yJDwMGVHVkYRk2pJX4PG3TT4ZYM=") ;
     background-size: cover;
     background-position: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300; 
+    font-size: 15px; 
+    line-height: 1.7;
     background-repeat: no-repeat;
 }
 
@@ -33,7 +38,7 @@ body {
         <div class="row">
             <div class="col-md-4">
                 <div class="card" style="width: 18rem; background-color: transparent; font-weight: bold;">
-                    <img src="https://source.unsplash.com/random/300*100?nature" width="286px" height="191px" class="card-img-top" alt="...">
+                    <img src="https://source.unsplash.com/random/300*100?user" width="286px" height="191px" class="card-img-top" alt="...">
                     <div class="card-body" style="border: 1px solid black;">
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the
@@ -44,7 +49,7 @@ body {
             </div>
             <div class="col-md-4">
                 <div class="card" style="width: 18rem; background-color: transparent; font-weight: bold;">
-                    <img src="https://source.unsplash.com/random/300*100?night" width="286px" height="191px"  class="card-img-top" alt="...">
+                    <img src="https://source.unsplash.com/random/300*100?developer" width="286px" height="191px"  class="card-img-top" alt="...">
                     <div class="card-body" style="border: 1px solid black;">
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the

@@ -1,8 +1,21 @@
-{% extends "base.html" %}
-{% block title %} User Notes {% endblock %}
-
+{% extends "base.html" %} {% block title %} User Notes {% endblock %}
 {% block styles %}
+
 {% endblock %}
 
+
 {% block body %}
+<section class="notes">
+    <div class="container">
+        <form method="post">
+            <textarea id="summernote" name="editordata"></textarea>
+        </form>
+    </div>
+</section>
+
+<script>
+    $(document).ready(function() {
+    $('#summernote').summernote();
+    });
+</script>
 {% endblock %}
