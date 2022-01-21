@@ -14,7 +14,6 @@ DB_NAME = os.getenv('DB_NAME')
 secret_key = os.getenv('SECRET_KEY')
 # print(secret_key)
 
-
 def create_app():
     # here Flask(__name__) means whenever Flask is called it takes the name of the place where it is called
     app = Flask(__name__)
