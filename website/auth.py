@@ -1,9 +1,11 @@
-from flask import Flask, Blueprint, request, render_template, flash, redirect, url_for, session
+from flask import Flask, Blueprint, jsonify, request, render_template, flash, redirect, url_for, session
 import re
 from .models import User, Note
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
 from flask_login import login_user, logout_user, login_required, current_user
+import json
+
 
 auth = Blueprint('auth', __name__)
 
@@ -87,9 +89,19 @@ def signup():
     return render_template('signup.html', user=current_user)
 
 
-@auth.route("/notes")
+@auth.route("/notes", methods=['GET', 'POST'])
 @login_required
 def notes():
+    if request.method == 'POST':
+        note = request.form.get('note')
+        if len(note) < 1:
+            flash('Note must be at least 1 character long', category='error')
+        else:
+            new_note = Note(data=note, user_id=current_user.id)
+            db.session.add(new_note)
+            db.session.commit()
+            flash('Note added', category='success')
+            return redirect(url_for('auth.notes'))
     return render_template("notes.html", user=current_user)
     # try :
     #     boolean = session['boolean']
@@ -109,3 +121,14 @@ def profile():
 # def notes():
 #     notes = Note.query.all()
 #     return render_template('notes.html', notes=notes)
+@auth.route('/delete-note', methods=['POST'])
+def delete_node():
+    note = json.loads(request.data)
+    noteID = note['noteId']
+    note = Note.query.get(noteID)
+    if note:
+        if note.user_id == current_user.id:
+            db.session.delete(note)
+            db.session.commit()
+            flash('Note deleted', category='success')
+    return jsonify({})
